@@ -1,12 +1,9 @@
-var scr, style;
-var body = document.getElementsByTagName('body');
-style = document.createElement('style');
-document.head.appendChild(style);
+window.onload = function () {
+    var style;
 
-document.querySelector('head').appendChild(scr);
-scr.onload = procede;
+    style = document.createElement('style');
+    document.head.appendChild(style);
 
-function procede() {
     style.innerHTML = (
         '.progressContainer{ position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: gray; }' +
         '.progress{ height: 4px; background: red; width: 0; transition: width 0.5s; }'
