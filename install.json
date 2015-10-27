@@ -1,6 +1,6 @@
 {
   "resources": {
-    "head": [
+    "body": [
       {
         "type": "script",
         "src": "script.js"
