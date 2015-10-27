@@ -27,26 +27,26 @@
                 "order": 2,
                 "title": "Height in pixels",
                 "type": "integer",
-                "default": 4
+                "default": 5
             },
             "ProgressBarColorOptions": {
                 "order": 3,
                 "type": "object",
-                "title": "Color options",
+                "title": "Color options (#00000000 is transparent)",
                 "properties": {
                     "ProgressBar": {
                         "order": 1,
                         "title": "Progress bar",
                         "type": "string",
                         "format": "color",
-                        "default": "#CD0000"
+                        "default": "#0080c0"
                     },
                     "Background": {
                         "order": 2,
-                        "title": "Background color",
+                        "title": "Background",
                         "type": "string",
                         "format": "color",
-                        "default": "#cccccc"
+                        "default": "#00000000"
                     }
                 }
             }
