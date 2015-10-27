@@ -1,0 +1,10 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "script",
+        "src": "script.js"
+      }
+    ]
+  }
+}
