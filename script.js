@@ -7,8 +7,8 @@ window.onload = function () {
     document.head.appendChild(style);
 
     style.innerHTML = (
-        '.progressContainer{ position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: ' + options.ProgressBarOptions.Background + '; }' +
-        '.progress{ height: 4px; background: ' + options.ProgressBarOptions.ProgressBar + '; width: 0; transition: width 0.5s; }'
+        '.progressContainer{ position: fixed; ' + options.Position + ': 0; left: 0; width: 100%; height: ' + options.Height + 'px; background: ' + options.ProgressBarColorOptions.Background + '; }' +
+        '.progress{ height: ' + options.Height + 'px; background: ' + options.ProgressBarColorOptions.ProgressBar + '; width: 0; transition: width 0.5s; }'
     );
 
     document.body.innerHTML += '<div class="progressContainer"><div id="progress" class="progress"></div></div>';

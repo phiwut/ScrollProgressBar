@@ -9,10 +9,30 @@
     },
     "options": {
         "properties": {
-            "ProgressBarOptions": {
+            "Position": {
+                "order": 1,
+                "title": "Height in pixels",
+                "type": "string",
+                "enum": [
+                    "top",
+                    "bottom"
+                ],
+                "enumNames": {
+                    "top": "top",
+                    "bottom": "bottom"
+                },
+                "default": "top"
+            },
+            "Height": {
                 "order": 2,
+                "title": "Height in pixels",
+                "type": "integer",
+                "default": 4
+            },
+            "ProgressBarColorOptions": {
+                "order": 3,
                 "type": "object",
-                "title": "Progress bar options",
+                "title": "Color options",
                 "properties": {
                     "ProgressBar": {
                         "order": 1,
