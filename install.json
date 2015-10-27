@@ -1,10 +1,35 @@
 {
-  "resources": {
-    "body": [
-      {
-        "type": "script",
-        "src": "script.js"
-      }
-    ]
-  }
+    "resources": {
+        "body": [
+            {
+                "type": "script",
+                "src": "script.js"
+            }
+        ]
+    },
+    "options": {
+        "properties": {
+            "ProgressBarOptions": {
+                "order": 2,
+                "type": "object",
+                "title": "Progress bar options",
+                "properties": {
+                    "ProgressBar": {
+                        "order": 1,
+                        "title": "Progress bar",
+                        "type": "string",
+                        "format": "color",
+                        "default": "#CD0000"
+                    },
+                    "Background": {
+                        "order": 2,
+                        "title": "Background color",
+                        "type": "string",
+                        "format": "color",
+                        "default": "#cccccc"
+                    }
+                }
+            }
+        }
+    }
 }

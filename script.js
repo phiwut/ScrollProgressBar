@@ -1,12 +1,14 @@
 window.onload = function () {
-    var style;
+    var style, options;
+
+    options = INSTALL_OPTIONS;
 
     style = document.createElement('style');
     document.head.appendChild(style);
 
     style.innerHTML = (
-        '.progressContainer{ position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: gray; }' +
-        '.progress{ height: 4px; background: red; width: 0; transition: width 0.5s; }'
+        '.progressContainer{ position: fixed; bottom: 0; left: 0; width: 100%; height: 4px; background: ' + options.ProgressBarOptions.Background + '; }' +
+        '.progress{ height: 4px; background: ' + options.ProgressBarOptions.ProgressBar + '; width: 0; transition: width 0.5s; }'
     );
 
     document.body.innerHTML += '<div class="progressContainer"><div id="progress" class="progress"></div></div>';
