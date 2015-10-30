@@ -7,7 +7,7 @@
             },
             {
                 "type": "script",
-                "src": "script.js"
+                "src": "progress-bar.js"
             }
         ]
     },
