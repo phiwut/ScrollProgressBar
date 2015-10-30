@@ -59,9 +59,8 @@
         var percent = Math.min(top / height * 100, 100);
         barEl.style[TRANSFORM] = 'translateX(' + -(100 - percent) + '%)';
 
-        if (   (options.hideUntilScroll && percent < 5)
-            || (options.hideAfterDone && percent > 95)){
-            containerEl.style[TRANSFORM] = 'translateY(-' + options.thickness + 'px)';
+        if ((options.hideUntilScroll && percent < 5) || (options.hideAfterDone && percent > 95)) {
+            containerEl.style[TRANSFORM] = 'translateY(' + (options.position === 'top' ? '-' : '') + options.thickness + 'px)';
         } else {
             containerEl.style[TRANSFORM] = '';
         }
