@@ -1,54 +1,101 @@
 {
     "resources": {
-        "body": [
+        "head": [
+            {
+                "type": "style",
+                "src": "progress-bar.css"
+            },
             {
                 "type": "script",
                 "src": "script.js"
             }
         ]
     },
+    "preview": {
+        "handlers": [
+            {
+                "options": ["*"],
+                "execute": "ScrollProgressBar.setOptions(INSTALL_OPTIONS)"
+            }
+        ]
+    },
     "options": {
         "properties": {
-            "Position": {
+            "position": {
                 "order": 1,
-                "title": "Height in pixels",
+                "title": "Bar Location",
                 "type": "string",
+                "format": "radios",
                 "enum": [
                     "top",
                     "bottom"
                 ],
                 "enumNames": {
-                    "top": "top",
-                    "bottom": "bottom"
+                    "top": "Top of the screen",
+                    "bottom": "Bottom of the screen"
                 },
                 "default": "top"
             },
-            "Height": {
+            "thickness": {
                 "order": 2,
-                "title": "Height in pixels",
-                "type": "integer",
-                "default": 5
+                "title": "Bar Thickness",
+                "type": "string",
+                "format": "radios",
+                "enum": [
+                    "1",
+                    "2",
+                    "3",
+                    "5",
+                    "10",
+                    "20"
+                ],
+                "enumNames": {
+                    "1": "Extra thin",
+                    "2": "Thin",
+                    "3": "Medium thin",
+                    "5": "Medium thick",
+                    "10": "Thick",
+                    "20": "Extra thick"
+                },
+                "default": "3"
             },
-            "ProgressBarColorOptions": {
+            "barColor": {
                 "order": 3,
-                "type": "object",
-                "title": "Color options (#00000000 is transparent)",
-                "properties": {
-                    "ProgressBar": {
-                        "order": 1,
-                        "title": "Progress bar",
-                        "type": "string",
-                        "format": "color",
-                        "default": "#0080c0"
-                    },
-                    "Background": {
-                        "order": 2,
-                        "title": "Background",
-                        "type": "string",
-                        "format": "color",
-                        "default": "#00000000"
-                    }
+                "type": "string",
+                "format": "color",
+                "title": "Bar Color",
+                "default": "#0096ff"
+            },
+            "translucent": {
+                "order": 4,
+                "type": "boolean",
+                "title": "Make the bar translucent to show the page beneath it",
+                "default": true
+            },
+            "containerHasColor": {
+                "order": 5,
+                "type": "boolean",
+                "title": "Show a background color behind the bar"
+            },
+            "containerColor": {
+                "order": 6,
+                "type": "string",
+                "format": "color",
+                "title": "Background Color",
+                "default": "#FFFFFF",
+                "showIf": {
+                    "containerHasColor": true
                 }
+            },
+            "hideUntilScroll": {
+                "order": 7,
+                "type": "boolean",
+                "title": "Hide bar until the page is scrolled"
+            },
+            "hideAfterDone": {
+                "order": 8,
+                "type": "boolean",
+                "title": "Hide bar once the page is fully scrolled"
             }
         }
     }
