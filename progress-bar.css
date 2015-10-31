@@ -1,0 +1,22 @@
+.scroll-progress-bar-container {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+
+    transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.scroll-progress-bar-bottom {
+    bottom: 0;
+}
+
+.scroll-progress-bar-top {
+    top: 0;
+}
+
+.scroll-progress-bar-bar {
+    width: 100%;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
