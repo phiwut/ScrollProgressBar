@@ -61,7 +61,11 @@
 
         if (   (options.hideUntilScroll && percent < 5)
             || (options.hideAfterDone && percent > 95)){
-            containerEl.style[TRANSFORM] = 'translateY(-' + options.thickness + 'px)';
+            var delta = +options.thickness;
+            if (options.position == 'top')
+                delta = -delta;
+
+            containerEl.style[TRANSFORM] = 'translateY(' + delta + 'px)';
         } else {
             containerEl.style[TRANSFORM] = '';
         }
