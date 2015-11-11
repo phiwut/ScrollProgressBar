@@ -71,7 +71,7 @@
         }
 
         if (options.translucent){
-            containerEl.style.opacity = 0.9;
+            containerEl.style.opacity = 0.5;
         } else {
             containerEl.style.opacity = 1;
         }
