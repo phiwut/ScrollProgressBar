@@ -14,7 +14,7 @@
     "preview": {
         "handlers": [
             {
-                "options": ["*"],
+                "options": [ "*" ],
                 "execute": "ScrollProgressBar.setOptions(INSTALL_OPTIONS)"
             }
         ]
@@ -25,7 +25,6 @@
                 "order": 1,
                 "title": "Bar Location",
                 "type": "string",
-                "format": "radios",
                 "enum": [
                     "top",
                     "bottom"
@@ -40,7 +39,6 @@
                 "order": 2,
                 "title": "Bar Thickness",
                 "type": "string",
-                "format": "radios",
                 "enum": [
                     "1",
                     "2",
