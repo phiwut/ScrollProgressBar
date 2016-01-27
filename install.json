@@ -28,21 +28,21 @@
                 "enum": [
                     "top",
                     "bottom",
-                    "costum"
+                    "custom"
                 ],
                 "enumNames": {
                     "top": "Top of the screen",
                     "bottom": "Bottom of the screen",
-                    "costum": "Costum placement"
+                    "custom": "custom placement"
                 },
                 "default": "top"
             },
-            "costumPosition": {
+            "customPosition": {
                 "showIf": {
-                    "position": "costum"
+                    "position": "custom"
                 },
                 "order": 2,
-                "title": "Costum placement (Distance from top in pixel)",
+                "title": "custom placement (Distance from top in pixel)",
                 "type": "integer",
                 "default": 50
             },
@@ -55,23 +55,23 @@
                     "3",
                     "5",
                     "10",
-                    "costum"
+                    "custom"
                 ],
                 "enumNames": {
                     "2": "Thin",
                     "3": "Medium thin",
                     "5": "Standard",
                     "10": "Thick",
-                    "costum": "Costum thickness"
+                    "custom": "custom thickness"
                 },
                 "default": "5"
             },
-            "costumThickness": {
+            "customThickness": {
                 "showIf": {
-                    "thickness": "costum"
+                    "thickness": "custom"
                 },
                 "order": 4,
-                "title": "Costum thickness (in pixel)",
+                "title": "custom thickness (in pixel)",
                 "type": "integer",
                 "default": 5
             },
@@ -104,6 +104,16 @@
                 }
             },
             "showAdvanced": {
+                "showIf": {
+                    "position": {
+                        "op": "!=",
+                        "value": "custom"
+                    },
+                    "thickness": {
+                        "op": "!=",
+                        "value": "custom"
+                    }
+                },
                 "order": 9,
                 "type": "boolean",
                 "title": "Show advanced options",
@@ -111,7 +121,18 @@
             },
             "advanced": {
                 "showIf": {
-                    "showAdvanced": true
+                    "showAdvanced": {
+                        "op": "==",
+                        "value": true
+                    },
+                    "position": {
+                        "op": "!=",
+                        "value": "custom"
+                    },
+                    "thickness": {
+                        "op": "!=",
+                        "value": "custom"
+                    }
                 },
                 "order": 10,
                 "type": "object",

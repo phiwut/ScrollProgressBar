@@ -1,7 +1,7 @@
 (function(){
     if (!document.addEventListener ||
         (  document.documentElement.style.transform === undefined
-        && document.documentElement.style.webkitTransform === undefined)){
+         && document.documentElement.style.webkitTransform === undefined)){
         return;
     }
 
@@ -32,7 +32,7 @@
             containerEl.style.top = options.costumPosition + 'px';
         else
             containerEl.style.top = '';
-            containerEl.className += ' scroll-progress-bar-' + options.position;
+        containerEl.className += ' scroll-progress-bar-' + options.position;
 
         // set bar thickness
         if (options.thickness == 'costum')
@@ -73,15 +73,17 @@
         var percent = Math.min(top / height * 100, 100);
         barEl.style[TRANSFORM] = 'translateX(' + -(100 - percent) + '%)';
 
-        if ((options.advanced.hideUntilScroll && percent < 5)
-            || (options.advanced.hideAfterDone && percent > 95)) {
-            var delta = + options.thickness;
-            if (options.position == 'top')
-                delta = - delta;
+        if (options.showAdvanced){
+            if ((options.advanced.hideUntilScroll && percent < 5)
+                || (options.advanced.hideAfterDone && percent > 95)) {
+                var delta = + options.thickness;
+                if (options.position == 'top')
+                    delta = - delta;
 
-            containerEl.style[TRANSFORM] = 'translateY(' + delta + 'px)';
-        } else {
-            containerEl.style[TRANSFORM] = '';
+                containerEl.style[TRANSFORM] = 'translateY(' + delta + 'px)';
+            } else {
+                containerEl.style[TRANSFORM] = '';
+            }
         }
 
         if (options.translucent){
