@@ -27,56 +27,74 @@
                 "type": "string",
                 "enum": [
                     "top",
-                    "bottom"
+                    "bottom",
+                    "costum"
                 ],
                 "enumNames": {
                     "top": "Top of the screen",
-                    "bottom": "Bottom of the screen"
+                    "bottom": "Bottom of the screen",
+                    "costum": "Costum placement"
                 },
                 "default": "top"
             },
-            "thickness": {
+            "costumPosition": {
+                "showIf": {
+                    "position": "costum"
+                },
                 "order": 2,
+                "title": "Costum placement (Distance from top in pixel)",
+                "type": "integer",
+                "default": 50
+            },
+            "thickness": {
+                "order": 3,
                 "title": "Bar Thickness",
                 "type": "string",
                 "enum": [
-                    "1",
                     "2",
                     "3",
                     "5",
                     "10",
-                    "20"
+                    "costum"
                 ],
                 "enumNames": {
-                    "1": "Extra thin",
                     "2": "Thin",
                     "3": "Medium thin",
-                    "5": "Medium thick",
+                    "5": "Standard",
                     "10": "Thick",
-                    "20": "Extra thick"
+                    "costum": "Costum thickness"
                 },
-                "default": "3"
+                "default": "5"
+            },
+            "costumThickness": {
+                "showIf": {
+                    "thickness": "costum"
+                },
+                "order": 4,
+                "title": "Costum thickness (in pixel)",
+                "type": "integer",
+                "default": 5
             },
             "barColor": {
-                "order": 3,
+                "order": 5,
                 "type": "string",
                 "format": "color",
                 "title": "Bar Color",
                 "default": "#0096ff"
             },
             "translucent": {
-                "order": 4,
+                "order": 6,
                 "type": "boolean",
                 "title": "Make the bar translucent to show the page beneath it",
                 "default": true
             },
             "containerHasColor": {
-                "order": 5,
+                "order": 7,
                 "type": "boolean",
                 "title": "Show a background color behind the bar"
             },
             "containerColor": {
-                "order": 6,
+                "order": 8,
                 "type": "string",
                 "format": "color",
                 "title": "Background Color",
@@ -85,15 +103,31 @@
                     "containerHasColor": true
                 }
             },
-            "hideUntilScroll": {
-                "order": 7,
+            "showAdvanced": {
+                "order": 9,
                 "type": "boolean",
-                "title": "Hide bar until the page is scrolled"
+                "title": "Show advanced options",
+                "default": false
             },
-            "hideAfterDone": {
-                "order": 8,
-                "type": "boolean",
-                "title": "Hide bar once the page is fully scrolled"
+            "advanced": {
+                "showIf": {
+                    "showAdvanced": true
+                },
+                "order": 10,
+                "type": "object",
+                "title": "Advanced options",
+                "properties": {
+                    "hideUntilScroll": {
+                        "order": 1,
+                        "type": "boolean",
+                        "title": "Hide bar until the page is scrolled"
+                    },
+                    "hideAfterDone": {
+                        "order": 2,
+                        "type": "boolean",
+                        "title": "Hide bar once the page is fully scrolled"
+                    }
+                }
             }
         }
     }

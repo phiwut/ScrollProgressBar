@@ -24,12 +24,26 @@
             containerEl.appendChild(barEl);
         }
 
+        // set class name
         containerEl.className = 'scroll-progress-bar-container';
-        containerEl.className += ' scroll-progress-bar-' + options.position;
 
-        barEl.style.height = options.thickness + "px";
+        // set bar position
+        if (options.position == 'costum')
+            containerEl.style.top = options.costumPosition + 'px';
+        else
+            containerEl.style.top = '';
+            containerEl.className += ' scroll-progress-bar-' + options.position;
+
+        // set bar thickness
+        if (options.thickness == 'costum')
+            barEl.style.height = options.costumThickness + 'px';
+        else
+            barEl.style.height = options.thickness + 'px';
+
+        // set bar color
         barEl.style.backgroundColor = options.barColor;
 
+        // set background color
         if (options.containerHasColor)
             containerEl.style.backgroundColor = options.containerColor;
         else
@@ -59,11 +73,11 @@
         var percent = Math.min(top / height * 100, 100);
         barEl.style[TRANSFORM] = 'translateX(' + -(100 - percent) + '%)';
 
-        if (   (options.hideUntilScroll && percent < 5)
-            || (options.hideAfterDone && percent > 95)){
-            var delta = +options.thickness;
+        if ((options.advanced.hideUntilScroll && percent < 5)
+            || (options.advanced.hideAfterDone && percent > 95)) {
+            var delta = + options.thickness;
             if (options.position == 'top')
-                delta = -delta;
+                delta = - delta;
 
             containerEl.style[TRANSFORM] = 'translateY(' + delta + 'px)';
         } else {
@@ -71,7 +85,7 @@
         }
 
         if (options.translucent){
-            containerEl.style.opacity = 0.5;
+            containerEl.style.opacity = 0.6;
         } else {
             containerEl.style.opacity = 1;
         }
