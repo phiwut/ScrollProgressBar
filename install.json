@@ -27,24 +27,13 @@
                 "type": "string",
                 "enum": [
                     "top",
-                    "bottom",
-                    "custom"
+                    "bottom"
                 ],
                 "enumNames": {
                     "top": "Top of the screen",
-                    "bottom": "Bottom of the screen",
-                    "custom": "custom placement"
+                    "bottom": "Bottom of the screen"
                 },
                 "default": "top"
-            },
-            "customPosition": {
-                "showIf": {
-                    "position": "custom"
-                },
-                "order": 2,
-                "title": "custom placement (Distance from top in pixel)",
-                "type": "integer",
-                "default": 50
             },
             "thickness": {
                 "order": 3,
@@ -104,16 +93,6 @@
                 }
             },
             "showAdvanced": {
-                "showIf": {
-                    "position": {
-                        "op": "!=",
-                        "value": "custom"
-                    },
-                    "thickness": {
-                        "op": "!=",
-                        "value": "custom"
-                    }
-                },
                 "order": 9,
                 "type": "boolean",
                 "title": "Show advanced options",
@@ -124,14 +103,6 @@
                     "showAdvanced": {
                         "op": "==",
                         "value": true
-                    },
-                    "position": {
-                        "op": "!=",
-                        "value": "custom"
-                    },
-                    "thickness": {
-                        "op": "!=",
-                        "value": "custom"
                     }
                 },
                 "order": 10,

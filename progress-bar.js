@@ -28,15 +28,12 @@
         containerEl.className = 'scroll-progress-bar-container';
 
         // set bar position
-        if (options.position == 'costum')
-            containerEl.style.top = options.costumPosition + 'px';
-        else
-            containerEl.style.top = '';
+        containerEl.style.top = '';
         containerEl.className += ' scroll-progress-bar-' + options.position;
 
         // set bar thickness
-        if (options.thickness == 'costum')
-            barEl.style.height = options.costumThickness + 'px';
+        if (options.thickness == 'custom')
+            barEl.style.height = options.customThickness + 'px';
         else
             barEl.style.height = options.thickness + 'px';
 
@@ -76,7 +73,9 @@
         if (options.showAdvanced){
             if ((options.advanced.hideUntilScroll && percent < 5)
                 || (options.advanced.hideAfterDone && percent > 95)) {
-                var delta = + options.thickness;
+                var delta = +options.thickness;
+                if (options.thickness == 'custom')
+                    delta = +options.customThickness;
                 if (options.position == 'top')
                     delta = - delta;
 
