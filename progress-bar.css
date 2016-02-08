@@ -19,4 +19,5 @@
     width: 100%;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
+	transition: 0.1s ease-in-out;
 }
