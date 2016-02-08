@@ -51,7 +51,7 @@
                     "3": "Medium thin",
                     "5": "Standard",
                     "10": "Thick",
-                    "custom": "custom thickness"
+                    "custom": "Custom"
                 },
                 "default": "5"
             },
@@ -60,7 +60,7 @@
                     "thickness": "custom"
                 },
                 "order": 4,
-                "title": "custom thickness (in pixel)",
+                "title": "Custom Bar Thickness (in pixels)",
                 "type": "integer",
                 "default": 5
             },
