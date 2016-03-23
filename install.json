@@ -1,6 +1,6 @@
 {
     "resources": {
-        "head": [
+        "body": [
             {
                 "type": "style",
                 "src": "progress-bar.css"
